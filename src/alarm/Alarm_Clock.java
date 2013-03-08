@@ -4,6 +4,8 @@
  */
 package alarm;
 
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -20,8 +22,13 @@ public class Alarm_Clock {
         JLabel time=new JLabel("00:00:00");
         JPanel backPane=new JPanel();
         JPanel timeHold=new JPanel();
+        JPanel bottom=new JPanel ();
+        JButton set=new JButton("Set");
         timeHold.add(time);
+        bottom.add(set);
+        backPane.setLayout(new BoxLayout(backPane, BoxLayout.Y_AXIS));
         backPane.add(timeHold);
+        backPane.add(bottom);
         backFrame.add(backPane);
         backFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         backFrame.pack();
