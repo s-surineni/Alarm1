@@ -18,11 +18,12 @@ public class Alarm_Clock {
     
     public static void main(String[] args) {
         JLabel time=new JLabel("00:00:00");
-        JPanel backPane=new JPanel();
-        JPanel timeHold=new JPanel();
-        timeHold.add(time);
-        backPane.add(timeHold);
-        backFrame.add(backPane);
+        //JPanel backPane=new JPanel();
+        //JPanel timeHold=new JPanel();
+        //timeHold.add(time);
+        //backPane.add(timeHold);
+        //backFrame.add(backPane);
+        backFrame.add(time);
         backFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         backFrame.pack();
         backFrame.setVisible(true);
