@@ -19,12 +19,12 @@ public class Alarm_Clock {
 
     
     public static void main(String[] args) {
-        JLabel time=new JLabel("00:00:00");
+        
         JPanel backPane=new JPanel();
         JPanel timeHold=new JPanel();
         JPanel bottom=new JPanel ();
         JButton set=new JButton("Set");
-        timeHold.add(time);
+        
         bottom.add(set);
         backPane.setLayout(new BoxLayout(backPane, BoxLayout.Y_AXIS));
         backPane.add(timeHold);
