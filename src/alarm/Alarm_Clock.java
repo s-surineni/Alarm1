@@ -6,6 +6,7 @@ package alarm;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -19,7 +20,9 @@ public class Alarm_Clock {
 
     
     public static void main(String[] args) {
-        
+        JComboBox hrs =new JComboBox();
+        JComboBox min=new JComboBox();
+        JComboBox ampm=new JComboBox();
         JPanel backPane=new JPanel();
         JPanel timeHold=new JPanel();
         JPanel bottom=new JPanel ();
