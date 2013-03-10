@@ -28,11 +28,13 @@ public class Alarm_Clock {
     JPanel timeHold = new JPanel();
     JPanel bottom = new JPanel();
     JButton set = new JButton("Set");
+    JButton tone=new JButton("Tone");
 
     public static void main(String[] args) {
         Alarm_Clock a1 = new Alarm_Clock();
 
         a1.prepInterfc();
+        a1.listenAdd();
 
 
 
@@ -40,6 +42,7 @@ public class Alarm_Clock {
 
     void prepInterfc() {
         bottom.add(set);
+        bottom.add(tone);
         backPane.setLayout(new BoxLayout(backPane, BoxLayout.Y_AXIS));
         backPane.add(timeHold);
         setCombo(hrs);
@@ -54,6 +57,10 @@ public class Alarm_Clock {
         backFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         backFrame.pack();
         backFrame.setVisible(true);
+        
+
+    }
+    void listenAdd(){
         set.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int hh = Integer.parseInt(hrs.getSelectedItem().toString());
@@ -62,7 +69,11 @@ public class Alarm_Clock {
                 String apm = ampm.getSelectedItem().toString();
             }
         });
-
+        tone.addActionListener(new ActionListener(){
+    public void actionPerformed(ActionEvent e){
+        new getFile().getFile();
+    }});
+        
     }
 
     void setCombo(JComboBox h) {
