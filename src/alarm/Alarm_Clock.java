@@ -16,18 +16,24 @@ import javax.swing.JPanel;
  * @author vinnu
  */
 public class Alarm_Clock {
-    static JFrame backFrame=new JFrame("Alarm");
 
-    
+    static JFrame backFrame = new JFrame("Alarm");
+    JComboBox hrs = new JComboBox();
+    JComboBox min = new JComboBox();
+    JComboBox ampm = new JComboBox();
+    JPanel backPane = new JPanel();
+    JPanel timeHold = new JPanel();
+    JPanel bottom = new JPanel();
+    JButton set = new JButton("Set");
+
     public static void main(String[] args) {
-        JComboBox hrs =new JComboBox();
-        JComboBox min=new JComboBox();
-        JComboBox ampm=new JComboBox();
-        JPanel backPane=new JPanel();
-        JPanel timeHold=new JPanel();
-        JPanel bottom=new JPanel ();
-        JButton set=new JButton("Set");
+
+
         
+
+    }
+    
+    void prepInterfc(){
         bottom.add(set);
         backPane.setLayout(new BoxLayout(backPane, BoxLayout.Y_AXIS));
         backPane.add(timeHold);
