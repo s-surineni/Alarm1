@@ -19,6 +19,9 @@ import javazoom.jl.player.Player;
  */
 public class mp3Player implements Runnable{
 Player plyr;
+public mp3Player(){
+    
+}
     public mp3Player(File filoc) throws FileNotFoundException, JavaLayerException {
         FileInputStream f1=new FileInputStream(filoc);
         BufferedInputStream bi=new BufferedInputStream(f1);

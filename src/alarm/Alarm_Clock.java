@@ -67,6 +67,7 @@ public class Alarm_Clock {
                 int mm = Integer.parseInt(min.getSelectedItem().toString());
 
                 String apm = ampm.getSelectedItem().toString();
+                new IsTime().setCal(hh, mm);
             }
         });
         tone.addActionListener(new ActionListener(){
