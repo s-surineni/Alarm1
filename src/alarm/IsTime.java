@@ -14,14 +14,14 @@ import java.util.GregorianCalendar;
 public class IsTime {
     Calendar cal=GregorianCalendar.getInstance();
     void setCal(int hr,int mi) throws InterruptedException{
-        cal.set(Calendar.HOUR_OF_DAY, hr);
+        cal.set(Calendar.HOUR_OF_DAY, hr+12);
         cal.set(Calendar.MINUTE, mi);
         gtSleep(cal);
     }
     void gtSleep(Calendar c) throws InterruptedException{
-        Thread t1=new Thread(new mp3Player());
+        Thread t1=new Thread();
         t1.sleep(c.getTimeInMillis()-System.currentTimeMillis());
-        t1.start();
+        new mp3Player().run();
         
     }
     

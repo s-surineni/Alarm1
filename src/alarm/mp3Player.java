@@ -22,9 +22,10 @@ Player plyr;
 public mp3Player(){
     
 }
-    public mp3Player(File filoc) throws FileNotFoundException, JavaLayerException {
+    public mp3Player(String filoc) throws FileNotFoundException, JavaLayerException {
         FileInputStream f1=new FileInputStream(filoc);
         BufferedInputStream bi=new BufferedInputStream(f1);
+        System.err.println(bi);
         plyr=new Player(bi);
     }
     public void run(){

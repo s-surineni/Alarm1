@@ -6,13 +6,18 @@ package alarm;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javazoom.jl.decoder.JavaLayerException;
 
 /**
  *
@@ -67,12 +72,24 @@ public class Alarm_Clock {
                 int mm = Integer.parseInt(min.getSelectedItem().toString());
 
                 String apm = ampm.getSelectedItem().toString();
-                new IsTime().setCal(hh, mm);
+                try {
+                    new IsTime().setCal(hh, mm);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Alarm_Clock.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         tone.addActionListener(new ActionListener(){
     public void actionPerformed(ActionEvent e){
-        new getFile().getFile();
+        try {
+            new getFile().getFile();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Alarm_Clock.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JavaLayerException ex) {
+            Logger.getLogger(Alarm_Clock.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Alarm_Clock.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }});
         
     }
