@@ -15,9 +15,10 @@ public class IsTime {
     Calendar cal=GregorianCalendar.getInstance();
     mp3Player m1=new mp3Player();
         Thread t1=new Thread(m1);
-    void setCal(int hr,int mi) throws InterruptedException{
-        cal.set(Calendar.HOUR_OF_DAY, hr+12);
+    void setCal(int hr,int mi,int ap) throws InterruptedException{
+        cal.set(Calendar.HOUR, hr);
         cal.set(Calendar.MINUTE, mi);
+        cal.set(Calendar.AM_PM, ap);
         gtSleep(cal);
     }
     void gtSleep(Calendar c) throws InterruptedException{

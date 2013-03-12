@@ -73,10 +73,16 @@ public class Alarm_Clock {
                 if(set.getText()=="Start"){
                 int hh = Integer.parseInt(hrs.getSelectedItem().toString());
                 int mm = Integer.parseInt(min.getSelectedItem().toString());
+                int apm;
+                if(ampm.getSelectedItem()=="AM"){
+                    apm=Calendar.AM;
+                }
+                else 
+                    apm=Calendar.PM;
 
-                String apm = ampm.getSelectedItem().toString();
+                
                 try {
-                    it.setCal(hh, mm);
+                    it.setCal(hh, mm,apm);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Alarm_Clock.class.getName()).log(Level.SEVERE, null, ex);
                 }
