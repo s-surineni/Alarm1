@@ -19,9 +19,10 @@ public class IsTime {
         gtSleep(cal);
     }
     void gtSleep(Calendar c) throws InterruptedException{
-        Thread t1=new Thread();
+        mp3Player m1=new mp3Player();
+        Thread t1=new Thread(m1);
         t1.sleep(c.getTimeInMillis()-System.currentTimeMillis());
-        new mp3Player().run();
+        t1.start();
         
     }
     

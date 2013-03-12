@@ -18,7 +18,7 @@ import javazoom.jl.player.Player;
  * @author vinnu
  */
 public class mp3Player implements Runnable{
-Player plyr;
+static Player plyr;
 public mp3Player(){
     
 }
