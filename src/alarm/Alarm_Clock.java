@@ -32,7 +32,7 @@ public class Alarm_Clock {
     JPanel backPane = new JPanel();
     JPanel timeHold = new JPanel();
     JPanel bottom = new JPanel();
-    JButton set = new JButton("Set");
+    static JButton set = new JButton("Start");
     JButton tone=new JButton("Tone");
 
     public static void main(String[] args) {
@@ -67,15 +67,22 @@ public class Alarm_Clock {
     }
     void listenAdd(){
         set.addActionListener(new ActionListener() {
+            
             public void actionPerformed(ActionEvent e) {
+                IsTime it=new IsTime();
+                if(set.getText()=="Start"){
                 int hh = Integer.parseInt(hrs.getSelectedItem().toString());
                 int mm = Integer.parseInt(min.getSelectedItem().toString());
 
                 String apm = ampm.getSelectedItem().toString();
                 try {
-                    new IsTime().setCal(hh, mm);
+                    it.setCal(hh, mm);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Alarm_Clock.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+                else{
+                    mp3Player.plyr.close();
                 }
             }
         });
