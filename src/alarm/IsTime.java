@@ -20,13 +20,14 @@ public class IsTime {
         cal.set(Calendar.HOUR, hr);
         cal.set(Calendar.MINUTE, mi);
         cal.set(Calendar.AM_PM, ap);
+        System.out.println("hour "+cal.HOUR);
         if((cal.getTimeInMillis()-System.currentTimeMillis())<0)
             
             cal.set(Calendar.HOUR,hr+24);
         gtSleep(cal);
     }
     void gtSleep(Calendar c) throws InterruptedException{
-        
+        System.out.println("hour "+c.HOUR);
         t1.sleep(c.getTimeInMillis()-System.currentTimeMillis());
         t1.start();
         Alarm_Clock.set.setText("Stop");
