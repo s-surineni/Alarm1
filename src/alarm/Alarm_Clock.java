@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -79,6 +80,17 @@ public class Alarm_Clock {
                 }
                 else 
                     apm=Calendar.PM;
+                if(getFile.fiLoc==null){
+            URL turl = this.getClass().getResource("/bb.mp3");
+            System.out.print(turl);
+                    try {
+                        new mp3Player(turl.getFile());
+                    } catch (FileNotFoundException ex) {
+                        Logger.getLogger(Alarm_Clock.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (JavaLayerException ex) {
+                        Logger.getLogger(Alarm_Clock.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+        }
 
                 
                 try {
@@ -86,6 +98,7 @@ public class Alarm_Clock {
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Alarm_Clock.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                
             }
                 else{
                     mp3Player.plyr.close();
