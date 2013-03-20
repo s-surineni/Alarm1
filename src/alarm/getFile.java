@@ -18,7 +18,7 @@ import javazoom.jl.decoder.JavaLayerException;
 public class getFile {
     JFileChooser jc=new JFileChooser();
     static String fiLoc;
-    File fl;
+    static File fl;
     void getFile() throws FileNotFoundException, JavaLayerException, IOException{
         jc.showDialog(Alarm_Clock.backFrame, "set");
         fl=jc.getSelectedFile();
