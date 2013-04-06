@@ -65,6 +65,7 @@ public class Alarm_Clock {
         backFrame.add(backPane);
         backFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         backFrame.pack();
+        backFrame.setResizable(false);
         backFrame.setVisible(true);
 
 
